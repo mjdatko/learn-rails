@@ -1,0 +1,24 @@
+<% content_for :title do %>Contact<% end %>
+<h3>Contact</h3>
+<div class="form">
+    <%= form_with model: @contact, local: true do |form| %>
+   
+    <%= render 'shared/error_messages2', object: form.object %>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, class: 'form-control' %>
+    <br/>
+    <br/>
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-control'%>
+    <br/>
+    <br/>
+    <%= form.label 'message' %>
+    <%= form.text_area :content, size: '40x5', class: 'form-control' %>
+    <br/>
+     
+    <br/>
+    <%= form.submit 'Submit', class: 'submit' %>
+    
+
+  <% end %>
+</div>
